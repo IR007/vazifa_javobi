@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Maqola o'chirish{% endblock title %}
+
+{% block content %}
+
+<br>
+
+<div class="col-12 d-flex justify-content-center align-items-center flex-column mb-sm-0">
+    <h2 class="mb-3">Maqolani o'chirish</h2>
+    <p><strong>'{{ article.title }}'</strong> maqolasini o'chirmoqchimisiz?</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <a href="{% url 'article_detail' article.pk %}" class="btn btn-outline-success">Ortga</a>
+            <input type="submit" class="btn btn-outline-danger" value="O'chirish">
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

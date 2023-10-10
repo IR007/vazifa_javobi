@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+    <h2>Kirish</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Kirish">
+    </form>
+<a href="{% url 'password_reset' %}">Parolingizni unutdingizmi?</a>
+{% endblock content %}

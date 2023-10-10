@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Maqola qo'shish{% endblock title %}
+
+{% block content %}
+
+<div class="col-12 d-flex justify-content-center align-items-center flex-column mb-sm-0">
+    <h2 class="mb-3">Maqola qo'shish</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-outline-success">Saqlash</button>
+    </form>
+</div>
+
+{% endblock content %}
